@@ -12,7 +12,8 @@ try:
             print(line_spoken, end='')
         except:
             pass
-except IOError:
-    print("data file missing")
+except IOError as err:
+    print("data file missing",str(err))
 finally:
-    data.close()
+    if 'data' in locals() :
+        data.close()

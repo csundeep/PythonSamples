@@ -14,9 +14,12 @@ try:
                 print(line_spoken, file=man_file)
             elif role == 'Other Man':
                 print(line_spoken, file=other_file)
-except IOError:
-    print("data file missing")
+except IOError as err:
+    print("data file missing", str(err))
 finally:
-    data.close()
-    man_file.close()
-    other_file.close()
+    if 'data' in locals() :
+        data.close()
+    if 'man_file' in locals() :
+        man_file.close()
+    if 'other_file' in locals() :
+        other_file.close()
