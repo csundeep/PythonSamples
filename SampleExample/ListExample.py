@@ -6,6 +6,8 @@ for friend in friends:
     else:
         print(friend)  
         
+# print(friends[0:3])
+        
 # print(friends[0]) 
 # print(friends[1]) 
 # print(friends[2]) 
