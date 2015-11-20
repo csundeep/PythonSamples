@@ -1,4 +1,5 @@
 from Person import Person
+from AdvancedPerson import AdvancedPerson
 def getListData(fileName):
     try:
         with open(fileName, "r") as person:
@@ -11,6 +12,14 @@ def getObjectData(fileName):
         with open(fileName, "r") as person:
             temp=person.readline().strip().split(',')
             return Person(temp.pop(0),temp.pop(0),temp)
+    except IOError as err:
+        print("person file missing", str(err))
+        
+def getInheritedObjectData(fileName):
+    try:
+        with open(fileName, "r") as person:
+            temp=person.readline().strip().split(',')
+            return AdvancedPerson(temp.pop(0),temp.pop(0),temp)
     except IOError as err:
         print("person file missing", str(err))
 
